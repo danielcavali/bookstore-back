@@ -37,8 +37,9 @@ public class DBService {
 		cat3.getLivros().addAll(Arrays.asList(l4));
 		cat4.getLivros().addAll(Arrays.asList(l5));
 
+		
 		categoriaRepository.saveAll(Arrays.asList(cat1));
 
-		livroRepository.saveAll(Arrays.asList(l1));
+		livroRepository.saveAll(Arrays.asList(l1, l2, l3, l4, l5));
 	}
 }

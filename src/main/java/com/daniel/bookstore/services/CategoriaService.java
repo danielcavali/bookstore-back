@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.daniel.bookstore.domain.Categoria;
+import com.daniel.bookstore.dtos.CategoriaDTO;
 import com.daniel.bookstore.repositories.CategoriaRepository;
 import com.daniel.bookstore.services.exeptions.ObjectNotFoundExeption;
 
@@ -29,6 +30,15 @@ public class CategoriaService {
 	
 	public Categoria create(Categoria obj) {
 		obj.setId(null);
+		return repository.save(obj);
+	}
+
+	public Categoria create(Integer id, CategoriaDTO objdto) {
+		// TODO Auto-generated method stub
+		
+		Categoria obj = findByID(id);
+		obj.setNome(objdto.getNome());
+		obj.setDescricao(objdto.getDescriçao());
 		return repository.save(obj);
 	}
 }

@@ -21,7 +21,7 @@ public class ResourceExeptionHandler {
 	}
 	
 	@ExceptionHandler(com.daniel.bookstore.services.exeptions.DataIntegrityViolationException.class)
-	public ResponseEntity<StandartError> dataIntegrityViolationException(com.daniel.bookstore.services.exeptions.DataIntegrityViolationException e, ServletRequest request ){
+	public ResponseEntity<StandartError> dataIntegrityViolationException(DataIntegrityViolationException e, ServletRequest request ){
 		StandartError error = new StandartError(System.currentTimeMillis(),HttpStatus.BAD_REQUEST.value(),e.getMessage());
 		return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
 		

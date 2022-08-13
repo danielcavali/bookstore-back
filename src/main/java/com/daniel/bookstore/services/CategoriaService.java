@@ -41,4 +41,10 @@ public class CategoriaService {
 		obj.setDescricao(objdto.getDescriçao());
 		return repository.save(obj);
 	}
+
+	public void delete(Integer id) {
+		// TODO Auto-generated method stub
+		findByID(id);
+		repository.deleteById(id);
+	}
 }

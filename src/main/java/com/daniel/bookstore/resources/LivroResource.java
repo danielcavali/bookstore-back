@@ -29,7 +29,7 @@ public class LivroResource {
 
 	}
 	
-	@GetMapping()
+	@GetMapping
 	public ResponseEntity<List<LivroDTO>> findall(@RequestParam(value = "categoria", defaultValue = "0") Integer id_cat) {
 		
 		List<Livro> list = service.findAll(id_cat);

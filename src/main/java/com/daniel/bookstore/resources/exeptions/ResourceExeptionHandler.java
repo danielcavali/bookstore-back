@@ -2,8 +2,6 @@
 
 package com.daniel.bookstore.resources.exeptions;
 
-import java.util.Iterator;
-
 import javax.servlet.ServletRequest;
 
 import org.springframework.dao.DataIntegrityViolationException;
